@@ -1,16 +1,12 @@
-import React from 'react'
+import ConversationFallBack from "@/components/shared/conversation/ConversationFallback";
+import React from "react";
 
-// type Props = {}
-
-const page = (
-    // props: Props
-
-) => {
+const page = () => {
   return (
-    <div> 
-        {/* {props} */} aaa
-    </div>
-  )
-}
+    <>
+      <ConversationFallBack />
+    </>
+  );
+};
 
-export default page
+export default page;

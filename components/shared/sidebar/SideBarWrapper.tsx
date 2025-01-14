@@ -10,6 +10,7 @@ const SideBarWrapper = ({ children }: Props) => {
       <MobileNav />
       <DesktopNav />
       <main className="h-[calc(100%-80px)] lg:h-full w-full flex gap-4">{children}</main>
+
     </div>
   );
 };

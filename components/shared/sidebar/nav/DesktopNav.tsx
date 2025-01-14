@@ -9,6 +9,7 @@ import {
 import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
+import { ThemeToggle } from '../../../ui/theme/theme-toggle';
 
 const DesktopNav = () => {
   const paths = useNavigation();
@@ -23,7 +24,7 @@ const DesktopNav = () => {
                   <Tooltip>
                     <TooltipTrigger>
                       <div
-                        className={`${path.active ? "bg-blue-400" : "bg-white"} p-2 rounded-md`}
+                        className={`${path.active ? "bg-blue-400 dark:bg-blue-800" : "hover:bg-blue-200 dark:hover:bg-blue-400"}  p-2 rounded-md transition-all`}
                       >
                         {path.icon}
                       </div>
@@ -39,6 +40,7 @@ const DesktopNav = () => {
         </ul>
       </nav>
       <div className="flex flex-col items-center gap-4">
+        <ThemeToggle/>
         <UserButton />
       </div>
     </Card>

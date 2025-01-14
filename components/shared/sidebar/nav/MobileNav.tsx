@@ -1,6 +1,8 @@
 "use client";
+import { useConversation } from "@/app/hooks/useConversation";
 import { useNavigation } from "@/app/hooks/useNavigation";
 import { Card } from "@/components/ui/card";
+import { ThemeToggle } from "@/components/ui/theme/theme-toggle";
 import {
   Tooltip,
   TooltipContent,
@@ -12,6 +14,10 @@ import React from "react";
 
 const MobileNav = () => {
   const paths = useNavigation();
+
+  const { isActive } = useConversation();
+
+  if (isActive) return null;
   return (
     <Card className="fixed bottom-4 w-[calc(100vw-32px)] flex items-center h-16 p-2 lg:hidden">
       <nav className="w-full">
@@ -23,7 +29,7 @@ const MobileNav = () => {
                   <Tooltip>
                     <TooltipTrigger>
                       <div
-                        className={`${path.active ? "bg-blue-400" : "bg-white"} p-2 rounded-md`}
+                        className={`${path.active ? "bg-blue-400 dark:bg-blue-800" : "hover:bg-blue-200 dark:hover:bg-blue-400"}  p-2 rounded-md transition-all`}
                       >
                         {path.icon}
                       </div>
@@ -36,6 +42,9 @@ const MobileNav = () => {
               </li>
             );
           })}
+          <li>
+            <ThemeToggle />
+          </li>
           <li className="">
             <UserButton />
           </li>
