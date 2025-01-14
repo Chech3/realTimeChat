@@ -1,4 +1,4 @@
-import { httpRouter, HttpRouter } from "convex/server";
+import { httpRouter } from "convex/server";
 import { httpAction } from "./_generated/server";
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { Webhook } from "svix";
